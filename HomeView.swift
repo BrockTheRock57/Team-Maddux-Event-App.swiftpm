@@ -8,36 +8,52 @@ struct HomeView: View {
                     .ignoresSafeArea()
 
                 VStack {
+                    Image("maddux")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 200, height: 200)
+                        .cornerRadius(20)
+                        .padding()
+
+                    Text("TEAM MADDUX")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.white)
+
                     Spacer()
 
-                    VStack {
-                        Text("TEAM MADDUX")
-                            .font(.custom("Georgia", size: 32))
-                            .fontWeight(.bold)
-                            .padding()
-                            .cornerRadius(10)
-                            .foregroundColor(Color.black)
-
+                    VStack(spacing: 20) {
                         NavigationLink(destination: AboutView()) {
                             Text("Maddux Albert Joseph - Life Story")
                                 .padding()
-                                .background(Color.lightBlue)
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
+                                .background(Color.white)
+                                .foregroundColor(Color.black)
+                                .cornerRadius(20)
                         }
 
                         NavigationLink(destination: EventView()) {
                             Text("Go to an Event")
                                 .padding()
-                                .background(Color.lightBlue)
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
+                                .background(Color.white)
+                                .foregroundColor(Color.black)
+                                .cornerRadius(20)
                         }
                     }
+                    .padding(20)
                     .background(Color.lightBlue)
-                    .cornerRadius(10)
+                    .cornerRadius(20)
 
                     Spacer()
+
+                  
+                    Link(destination: URL(string: "https://my.luriechildrens.org/page/43035/donate/1?locale=en-US")!) {
+                        Text("Donate")
+                            .padding()
+                            .background(Color.white)
+                            .foregroundColor(Color.black)
+                            .cornerRadius(10)
+                            .padding(.bottom, 20)
+                    }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
@@ -46,8 +62,6 @@ struct HomeView: View {
         }
     }
 }
-
-
 
 extension Color {
     static let lightBlue = Color(red: 103/255, green: 216/255, blue: 255/255)
