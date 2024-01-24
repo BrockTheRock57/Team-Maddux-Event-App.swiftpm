@@ -8,49 +8,51 @@ struct HomeView: View {
                     .ignoresSafeArea()
 
                 VStack {
-                    Image("maddux")
+                    
+
+                    Text("TEAM MADDUX")
+                        .font(.custom("TimesNewRomanPS-BoldMT", size: 30)) // Using system font "Times New Roman"
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.white)
+                    Image("Joseph")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 200, height: 200)
                         .cornerRadius(20)
                         .padding()
-
-                    Text("TEAM MADDUX")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color.white)
-
                     Spacer()
 
                     VStack(spacing: 20) {
                         NavigationLink(destination: AboutView()) {
-                            Text("Maddux Albert Joseph - Life Story")
+                            Text("Context of Maddux")
                                 .padding()
-                                .background(Color.white)
-                                .foregroundColor(Color.black)
+                                .font(.custom("TimesNewRomanPS-BoldMT", size: 20))
+                                .foregroundColor(Color.white)
+                                .background(Color.black.opacity(0.7))
                                 .cornerRadius(20)
                         }
 
                         NavigationLink(destination: EventView()) {
                             Text("Go to an Event")
                                 .padding()
-                                .background(Color.white)
-                                .foregroundColor(Color.black)
+                                .font(.custom("TimesNewRomanPS-BoldMT", size: 20))
+                                .foregroundColor(Color.white)
+                                .background(Color.black.opacity(0.7))
                                 .cornerRadius(20)
                         }
                     }
                     .padding(20)
-                    .background(Color.lightBlue)
+                    .background(Color.lightBlue.opacity(0.8))
                     .cornerRadius(20)
 
                     Spacer()
 
-                  
                     Link(destination: URL(string: "https://my.luriechildrens.org/page/43035/donate/1?locale=en-US")!) {
-                        Text("Donate")
+                        Text("Donate Today")
                             .padding()
-                            .background(Color.white)
-                            .foregroundColor(Color.black)
+                            .font(.custom("TimesNewRomanPS-BoldMT", size: 17))
+                            .foregroundColor(Color.white)
+                            .background(Color.black.opacity(0.7))
                             .cornerRadius(10)
                             .padding(.bottom, 20)
                     }
@@ -64,7 +66,7 @@ struct HomeView: View {
 }
 
 extension Color {
-    static let lightBlue = Color(red: 103/255, green: 216/255, blue: 255/255)
+    static let lightBlue = Color(red: 103/255, green: 175/255, blue: 255/255)
 }
 
 struct HomeView_Previews: PreviewProvider {
