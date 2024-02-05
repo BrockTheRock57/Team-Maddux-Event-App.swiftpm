@@ -1,10 +1,16 @@
 import SwiftUI
 
+
+struct AsyncImage<Content> where Content : View {
+    
+}
+
 struct EventView: View {
     let events = ["Apple Picking", "Tree PLanting", "Hockey Game"]
     let photos = ["photo1", "photo2", "photo3"]
     let photoData = ["Data for Photo 1", "Data for Photo 2", "Data for Photo 3"]
     
+
 
     var body: some View {
         ScrollView {
@@ -14,6 +20,9 @@ struct EventView: View {
                 }
             }
             .padding()
+            Color.blue
+                .ignoresSafeArea()
+
         }
     }
 }
@@ -25,23 +34,28 @@ struct PhotoView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
+            Color.blue
+                .ignoresSafeArea()
+
+            
             
             Text(event)
-                .font(.title)
+                .padding()
+                .background(Color.white)
+                .foregroundColor(Color.black)
+                .cornerRadius(20)
             
-            Image(photo)
-                .resizable()
-                .scaledToFit()
-                .frame(height: 200)
-
             Text(data)
-                .font(.headline)
-                .foregroundColor(.blue)
+            
+            Spacer()
+            Spacer()
+            
+            
+            
         }
+        
     }
-}
-
-
+    }
         
         struct EventView_Previews: PreviewProvider {
             static var previews: some View {
